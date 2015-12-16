@@ -56,8 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="DAO\UsuariosDAO.cs" />
     <Compile Include="Infraestructure\DBConnect.cs" />
+    <Compile Include="Infraestructure\Hash.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Modules\IndexModule.cs" />
+    <Compile Include="Modules\UsuariosModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
