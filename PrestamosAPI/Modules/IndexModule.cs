@@ -1,4 +1,5 @@
 ﻿using Nancy;
+using PrestamosAPI.Infraestructure;
 
 namespace PrestamosAPI.Modules
 {
@@ -8,6 +9,9 @@ namespace PrestamosAPI.Modules
         {
             Get["/"] = parameters =>
             {
+                var x = new DBConnect();
+                x.OpenConnection();
+
                 return View["index"];
             };
         }
