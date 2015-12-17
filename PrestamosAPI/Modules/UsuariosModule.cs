@@ -19,8 +19,6 @@ namespace PrestamosAPI.Modules
                 return HttpStatusCode.OK;
             };
 
-
-
         }
     }
 }
