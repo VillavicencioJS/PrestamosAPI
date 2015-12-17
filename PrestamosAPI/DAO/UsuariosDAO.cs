@@ -20,9 +20,9 @@ namespace PrestamosAPI.DAO
         public void Crear(Usuario usuario){
             usuario.Clave = Hash.GetSHA1(usuario.Clave);
             var query = string.Format("INSERT INTO usuarios (USUARIO, CLAVE) VALUES('{0}', '{1}')", usuario.Nombre, usuario.Clave);
-            
             db.Insert(query);
         }
+
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Nancy;
 using PrestamosAPI.DAO;
 using PrestamosAPI.Models;
+using Nancy.ModelBinding;
 
 namespace PrestamosAPI.Modules
 {
@@ -10,17 +11,16 @@ namespace PrestamosAPI.Modules
             
             Post["/usuarios/crear"] = parameters =>
             {
-                var usuario = new Usuario { 
-                    Nombre = "ivan",
-                    Clave = "1234"
-                };
+                Usuario usuario = this.Bind();
 
                 var usuarioDAO = new UsuariosDAO();
                 usuarioDAO.Crear(usuario);
 
-
                 return HttpStatusCode.OK;
             };
+
+
+
         }
     }
 }
