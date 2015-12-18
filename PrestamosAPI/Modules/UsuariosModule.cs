@@ -19,6 +19,14 @@ namespace PrestamosAPI.Modules
                 return HttpStatusCode.OK;
             };
 
+            Get["/usuarios/traerRandom/"] = parameters =>
+            {
+                UsuariosDAO usuarioDAO = new UsuariosDAO();
+                var idRandom = usuarioDAO.TraerRandom();
+
+                return Negotiate.WithStatusCode(HttpStatusCode.OK).WithModel(new UsuarioRandom{ Id = idRandom }); 
+            };
+
         }
     }
 }

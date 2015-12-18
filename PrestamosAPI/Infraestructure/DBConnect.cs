@@ -27,7 +27,7 @@ namespace PrestamosAPI.Infraestructure
             server = "localhost";
             database = "deudas";
             uid = "root";
-            password = "p4ssw0rd*";
+            password = "root";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";

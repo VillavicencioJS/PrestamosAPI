@@ -23,6 +23,12 @@ namespace PrestamosAPI.DAO
             db.Insert(query);
         }
 
+        public int TraerRandom()
+        {
+            var query = "SELECT ID FROM usuarios ORDER BY RAND() LIMIT 1";
+            return int.Parse(db.Count(query).ToString());
+        }
+
 
     }
 }
