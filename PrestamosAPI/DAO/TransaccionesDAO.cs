@@ -27,5 +27,11 @@ namespace PrestamosAPI.DAO
             db.Insert(query);
         }
 
+
+        public float TraerTotalDeudas(int idPrestamista) {
+
+            var query = "SELECT SUM(VALOR) FROM transacciones WHERE PRESTAMISTA_ID = " + idPrestamista;
+            return db.Count(query);
+        }
     }
 }
