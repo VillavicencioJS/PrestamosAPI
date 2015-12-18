@@ -113,9 +113,28 @@ namespace PrestamosAPI.Infraestructure
         }
 
         //Count statement
-        public int Count()
+        public float Count(string query)
         {
-            return 0;
+            float Count = -1;
+
+            //Open Connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Mysql Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                //ExecuteScalar will return one value
+                Count =  float.Parse(cmd.ExecuteScalar() + "");
+
+                //close Connection
+                this.CloseConnection();
+
+                return Count;
+            }
+            else
+            {
+                return Count;
+            }
         }
 
         //Backup
