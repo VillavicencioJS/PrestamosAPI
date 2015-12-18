@@ -80,10 +80,8 @@ namespace PrestamosAPI.Infraestructure
         }
 
         //Insert statement
-        public void Insert()
+        public void Insert(string query)
         {
-            string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
-
             //open connection
             if (this.OpenConnection() == true)
             {

@@ -1,24 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Nancy;
+﻿using Nancy;
+using PrestamosAPI.DAO;
 using PrestamosAPI.Models;
+using Nancy.ModelBinding;
 
 namespace PrestamosAPI.Modules
 {
     public class UsuariosModule : NancyModule
     {
         public UsuariosModule() {
-
+            
             Post["/usuarios/crear"] = parameters =>
             {
-                var usuario = new Usuario();
-                
+                Usuario usuario = this.Bind();
 
-                return View["index"];
+                var usuarioDAO = new UsuariosDAO();
+                usuarioDAO.Crear(usuario);
+
+                return HttpStatusCode.OK;
             };
-        
+
         }
     }
 }
